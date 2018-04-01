@@ -7,17 +7,24 @@ from django.views.generic import TemplateView
 from django.views.static import serve
 from MxOnline.settings import MEDIA_ROOT
 
-from users.views import LoginView, RegisterView, ActiveUserView
+from users.views import LoginView, RegisterView, AciveUserView, ForgetPwdView, ResetView, ModifyPwdView
 from organization.views import OrgView
 
 
 urlpatterns = [
     path('xadmin/', xadmin.site.urls),
     url('^$', TemplateView.as_view(template_name="index.html"), name="index"),
+    url('^index/$', TemplateView.as_view(template_name="index.html"), name="index"),
     url('^login/$', LoginView.as_view(), name="login"),
     url('^register/$', RegisterView.as_view(), name="register"),
     url(r'^captcha/', include('captcha.urls')),
-    url(r'^active/(?P<active_code>.*)/$',ActiveUserView.as_view(), name="user_active"),
+    url(r'^active/(?P<active_code>.*)/$', AciveUserView.as_view(), name="user_active"),
+    url(r'^forgetpwd/$', ForgetPwdView.as_view(), name="forget_pwd"),
+    url(r'^reset/(?P<active_code>.*)/$', ResetView.as_view(), name="reset_pwd"),
+    url(r'^modify_pwd/$', ModifyPwdView.as_view(), name="modify_pwd"),
+
+
+
     #课程机构url配置
     url(r'^org/', include('organization.urls', namespace="org")),
     #课程相关url配置
