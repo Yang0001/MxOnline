@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('password', models.CharField(max_length=128, verbose_name='password')),
                 ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
                 ('nick_name', models.CharField(default='', max_length=50, verbose_name='昵称')),
-                ('birthday', models.DateField(null=True, verbose_name='生日')),
+                ('birday', models.DateField(null=True, verbose_name='生日')),
                 ('gender', models.CharField(choices=[('male', '男'), ('female', '女')], default='female', max_length=5)),
                 ('address', models.CharField(default='', max_length=100)),
                 ('mobile', models.CharField(blank=True, max_length=11, null=True)),
