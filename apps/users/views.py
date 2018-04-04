@@ -11,8 +11,6 @@ from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse, HttpResponseRedirect
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger
 
-
-
 from .models import UserProfile, EmailVerifyRecord
 from .forms import LoginForm, RegisterForm, ForgetForm, ModifyPwdForm, UploadImageForm
 from .forms import UserInfoForm
@@ -348,9 +346,12 @@ def page_not_found(request):
     response.status_code = 404
     return response
 
+
 def page_error(request):
     #全局500处理函数
     from django.shortcuts import render_to_response
     response = render_to_response('500.html', {})
     response.status_code = 500
     return response
+
+

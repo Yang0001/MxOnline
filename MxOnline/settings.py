@@ -15,7 +15,7 @@ SECRET_KEY = '_8nq#h28pspttmh4ow8mju+!i$r%cug6dm@lx)hyqz_=scol%#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -140,4 +140,7 @@ EMAIL_FROM = "botmanbotman@sina.com"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATICROOT = os.path.join(BASE_DIR, 'static')
+
 

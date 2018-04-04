@@ -9,10 +9,10 @@ class Migration(migrations.Migration):
         ('courses', '0011_auto_20180329_2304'),
     ]
 
-    operations = [
-        migrations.RenameField(
-            model_name='course',
-            old_name='fav_nums',
-            new_name='fac_nums',
-        ),
-    ]
+    # operations = [
+    #     migrations.RenameField(
+    #         model_name='course',
+    #         old_name='fav_nums',
+    #         new_name='fac_nums',
+    #     ),
+    # ]
