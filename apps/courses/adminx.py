@@ -4,9 +4,16 @@ from .models import Course, Lesson, Video, CourseResource
 
 
 class CourseAdmin(object):
+    style_fields = {"detail": "ueditor"}
+    import_excel = True
     list_display = ['name', 'desc','detail','degree','learn_times','students','fav_nums','image','click_nums','add_time']
     search_fields = ['name', 'desc','detail','degree','learn_times','students']
     list_filter =  ['name', 'desc','detail','degree','learn_times','students','fav_nums','image','click_nums','add_time']
+
+    def post(self, request, *args, **kwargs):
+        if 'excel' in request.FILES:
+            pass
+        return super(CourseAdmin, self).post(request, args, kwargs)
 
 
 class LessonAdmin(object):
